@@ -1,0 +1,6 @@
+framework module OBExtensions {
+  umbrella header "OBExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}
