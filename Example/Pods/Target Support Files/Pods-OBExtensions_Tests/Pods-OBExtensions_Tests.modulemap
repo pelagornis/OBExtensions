@@ -1,6 +1,0 @@
-framework module Pods_OBExtensions_Tests {
-  umbrella header "Pods-OBExtensions_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
