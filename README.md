@@ -1,29 +1,65 @@
 # OBExtensions
 
-[![CI Status](https://img.shields.io/travis/ahnjh1028@naver.com/OBExtensions.svg?style=flat)](https://travis-ci.org/ahnjh1028@naver.com/OBExtensions)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
 [![License](https://img.shields.io/cocoapods/l/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
 
-## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+⚒ Library for more convenient optional binding. 
 
-## Requirements
+## Using
+### import
+```swift
+import OBExtensions
+```
+
+### Use
+**Before**
+```swift
+var string: String?
+guard let s = string else {return ""}
+```
+**After**
+```swift
+var string: String?
+let s = string.obe(error: {return ""})
+```
+
+and 
+
+**Before**
+```swift
+if let s = string{ 
+    print("string :: \(s)") 
+}else{
+    fatalError()
+}
+```
+**After**
+```swift
+let s = string.obe {print("string :: \($0)")}
+```
 
 ## Installation
 
-OBExtensions is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+- **Using  [CocoaPods](https://cocoapods.org)**:
 
 ```ruby
 pod 'OBExtensions'
 ```
+- **Using [Swift Package Manager](https://swift.org/package-manager)**:
 
-## Author
+```swift
+import PackageDescription
 
-ahnjh1028@naver.com, ahnjh1028@naver.com
+let package = Package(
+  name: "MyApp",
+  dependencies: [
+    .Package(url: "https://github.com/JiHoonAHN/OBExtensions", branch: "master"),
+ ]
+)
+```
 
 ## License
-
-OBExtensions is available under the MIT license. See the LICENSE file for more info.
+**OBExtensions** is under MIT license. See the [LICENSE](LICENSE) file for more info.
