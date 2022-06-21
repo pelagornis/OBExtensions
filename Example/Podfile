@@ -1,0 +1,6 @@
+use_frameworks!
+target 'OBExtensions_Tests' do
+  pod 'OBExtensions', :path => '../'
+  
+  
+end
