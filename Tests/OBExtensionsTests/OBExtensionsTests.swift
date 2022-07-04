@@ -6,6 +6,6 @@ final class OBExtensionsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(OBExtensions().text, "Hello, World!")
+//        XCTAssertEqual(OBExtensions.text, "Hello, World!")
     }
 }
