@@ -37,15 +37,15 @@ public extension Optional{
         else{ fatalError()}
     }
     
-    func obe<T>(error: () -> T) -> T{
+    func obe<Err>(error: () -> Err) -> Err{
         guard let value = self else {return error()}
-        return value.self as? T ?? error()
+        return value.self as? Err ?? error()
     }
     
-    func obe<T>(success:  (Wrapped) -> Void, error : () -> T) -> T{
+    func obe<Err>(success:  (Wrapped) -> Void, error : () -> Err) -> Err{
         if let value = self{
             success(value)
-            return value as? T ?? error()
+            return value as? Err ?? error()
         }
         else{
             return error()
