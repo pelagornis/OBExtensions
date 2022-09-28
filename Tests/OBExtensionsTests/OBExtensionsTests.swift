@@ -1,11 +1,26 @@
 import XCTest
 @testable import OBExtensions
 
+struct User {
+    var name: String?
+    var email: String?
+}
+
 final class OBExtensionsTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-//        XCTAssertEqual(OBExtensions.text, "Hello, World!")
+    
+    func testOBExtension() {
+        var user = User()
+        user.name = "JiHoonAHN"
+        user.email = nil
+        
+        let name = user.name.obe(error: { "" })
+        let email = user.email.obe(error: { "" })
+        XCTAssertEqual(name, "JiHoonAHN")
+        XCTAssertEqual(email, "")
+    }
+    
+    func testOBExtension_Array() {
+        let array: [Int]? = [1,2,3]
+        XCTAssertEqual(array.obe(), [1,2,3])
     }
 }

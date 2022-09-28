@@ -23,31 +23,31 @@
 
 import Foundation
 
-public extension Optional{
-    func obe() -> Wrapped{
-        guard let value = self else{ fatalError()}
+public extension Optional {
+    func obe() -> Wrapped {
+        guard let value = self else{ fatalError() }
         return value
     }
     
-    func obe(success:  (Wrapped) -> Void) -> Wrapped{
-        if let value = self{
+    func obe(success: (Wrapped) -> Void) -> Wrapped {
+        if let value = self {
             success(value)
             return value
         }
-        else{ fatalError()}
+        else{ fatalError() }
     }
     
-    func obe<Err>(error: () -> Err) -> Err{
-        guard let value = self else {return error()}
+    func obe<Err>(error: () -> Err) -> Err {
+        guard let value = self else { return error() }
         return value.self as? Err ?? error()
     }
     
-    func obe<Err>(success:  (Wrapped) -> Void, error : () -> Err) -> Err{
-        if let value = self{
+    func obe<Err>(success: (Wrapped) -> Void, error : () -> Err) -> Err {
+        if let value = self {
             success(value)
             return value as? Err ?? error()
         }
-        else{
+        else {
             return error()
         }
     }
