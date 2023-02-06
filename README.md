@@ -1,10 +1,6 @@
 # OBExtensions
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
-[![Version](https://img.shields.io/cocoapods/v/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
-[![License](https://img.shields.io/cocoapods/l/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
-[![Platform](https://img.shields.io/cocoapods/p/OBExtensions.svg?style=flat)](https://cocoapods.org/pods/OBExtensions)
-
+![Swift](https://img.shields.io/badge/Swift-5.7-orange.svg)
 
 ⚒ Library for more convenient optional binding. 
 
