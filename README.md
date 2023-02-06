@@ -56,7 +56,7 @@ import PackageDescription
 let package = Package(
   name: "MyApp",
   dependencies: [
-    .Package(url: "https://github.com/Pelagornis/OBExtensions", branch: "master"),
+    .Package(url: "https://github.com/Pelagornis/OBExtensions", branch: "main"),
  ]
 )
 ```
