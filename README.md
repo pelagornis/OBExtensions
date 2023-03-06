@@ -14,27 +14,27 @@ import OBExtensions
 **Before**
 ```swift
 var string: String?
-guard let s = string else {return ""}
+guard let s = string else { return "" }
 ```
 **After**
 ```swift
 var string: String?
-let s = string.obe(error: {return ""})
+let s = string.obe(error: { return "" })
 ```
 
 and 
 
 **Before**
 ```swift
-if let s = string{ 
+if let s = string { 
     print("string :: \(s)") 
-}else{
+} else {
     fatalError()
 }
 ```
 **After**
 ```swift
-let s = string.obe {print("string :: \($0)")}
+let s = string.obe { print("string :: \($0)") }
 ```
 
 ## Installation
